@@ -1,0 +1,24 @@
+<div *ngIf= "updateMsg != undefined" class="alert alert-success alert-dismissible fade show" role="alert">
+    <h5>{{updateMsg}}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container">
+    <h1 style="text-align: center;">Update Book</h1>
+
+    <form #updateBookForm="ngForm" (ngSubmit)="updateBook(updateBookForm.value)">
+        <div class="mb-3">
+            <label for="bookId" class="form-label">Book Id</label>
+            <input type="number" ngModel name="bkId" class="form-control" id="bookId" placeholder="Book Id">
+        </div>
+        <div class="mb-3">
+            <label for="bookname" class="form-label">Book Name</label>
+            <input type="text" ngModel name="bkname" class="form-control" id="bookname" placeholder="Book Name">
+        </div>
+        <div class="mb-3">
+            <label for="bookPrice" class="form-label">Book Price</label>
+            <input type="number" ngModel name="bkPrice" class="form-control" id="bookPrice" placeholder="Book Price">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>

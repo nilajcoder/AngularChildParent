@@ -1,0 +1,28 @@
+<div *ngIf = "delmsg != undefined"  class="alert alert-success alert-dismissible fade show" role="alert">
+    <h5>{{delmsg}}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="container">
+    <h1 style="text-align: center;">List of Books Available</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Price</th>
+                <th scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.bookId}}</td>
+                <td>{{book.bookname}}</td>
+                <td>{{book.bookPrice}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="delBook(book.bookId)">Delete</button></td>
+                <td><button type="button" class="btn btn-warning" [routerLink]="['update']">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
